@@ -2,11 +2,11 @@
 
 ## How to try
 ```
-docker build .
+make test
 ```
 
 ## Output 
-See ./out.log
+See [output of make test](./out.log)
 
 
 

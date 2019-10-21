@@ -1,29 +1,38 @@
-Sending build context to Docker daemon  283.1kB
+Sending build context to Docker daemon  205.8kB
 Step 1/9 : FROM python:3.7-alpine3.9
  ---> b559f4e7461d
 Step 2/9 : RUN python3.7 -m pip install pip --upgrade
- ---> Using cache
- ---> ebd1af100a9f
+ ---> Running in baf9ed5750b8
+Requirement already up-to-date: pip in /usr/local/lib/python3.7/site-packages (19.3.1)
+Removing intermediate container baf9ed5750b8
+ ---> f2e3615f867f
 Step 3/9 : RUN python3.7 -m pip install setuptools==41.4.0
- ---> Using cache
- ---> 71af2c876fe8
+ ---> Running in aac78e036976
+Requirement already satisfied: setuptools==41.4.0 in /usr/local/lib/python3.7/site-packages (41.4.0)
+Removing intermediate container aac78e036976
+ ---> f45ea851300d
 Step 4/9 : ARG CACHEBUST=1
- ---> Using cache
- ---> f489eb13b728
+ ---> Running in 4075708b2aa8
+Removing intermediate container 4075708b2aa8
+ ---> 8b312e3fae40
 Step 5/9 : RUN echo -e "import setuptools\nprint('SETUP TOOLS VERSION: setuptools.version.__version__')" | python
- ---> Using cache
- ---> 6739f36acaa3
+ ---> Running in 5799e3c2d2b7
+SETUP TOOLS VERSION: setuptools.version.__version__
+Removing intermediate container 5799e3c2d2b7
+ ---> 2dd601d4672b
 Step 6/9 : RUN python3.7 --version
- ---> Using cache
- ---> 476973346bba
+ ---> Running in da3ef7c04d2c
+Python 3.7.5
+Removing intermediate container da3ef7c04d2c
+ ---> d46b72da840a
 Step 7/9 : WORKDIR /project
- ---> Using cache
- ---> f90caa625b53
+ ---> Running in a4bd1b7d348a
+Removing intermediate container a4bd1b7d348a
+ ---> c72466f0876a
 Step 8/9 : COPY project /project
- ---> Using cache
- ---> e06fcf621a20
+ ---> 009555a368ec
 Step 9/9 : RUN python3.7 setup.py test
- ---> Running in 1b0422ae7c49
+ ---> Running in cb6a9d449917
 running test
 Searching for mangin-library-of-library
 Reading https://test.pypi.org/simple/mangin-library-of-library/
@@ -31,8 +40,8 @@ Reading https://test.pypi.org/simple/mangin-library/
 Downloading https://test-files.pythonhosted.org/packages/ea/44/48dbf799fecb226308ffa7044a58a27f8629334b4e88f8b2f2172968d606/mangin_library_of_library-0.0.1.tar.gz#sha256=2f5272ad5568867da9bf4ac4b3c127e6aebbaab0428b4a9e0b117e18b70ffb01
 Best match: mangin-library-of-library 0.0.1
 Processing mangin_library_of_library-0.0.1.tar.gz
-Writing /tmp/easy_install-efvjfkyz/mangin_library_of_library-0.0.1/setup.cfg
-Running mangin_library_of_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-efvjfkyz/mangin_library_of_library-0.0.1/egg-dist-tmp-0l9tc3ky
+Writing /tmp/easy_install-2ixd07c3/mangin_library_of_library-0.0.1/setup.cfg
+Running mangin_library_of_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-2ixd07c3/mangin_library_of_library-0.0.1/egg-dist-tmp-n076uhwy
 [91mNot found: ['https://test.pypi.org/simple/mangin-library-of-library/',
 Not found: 'https://test.pypi.org/simple/mangin-library/']
 [0mMoving mangin_library_of_library-0.0.1-py3.7.egg to /project/.eggs
@@ -44,8 +53,8 @@ Reading https://test.pypi.org/simple/mangin-library/
 Downloading https://test-files.pythonhosted.org/packages/97/08/fe8f4cd6a1177ac69eb6afdf99cd1d3278095905d7c03e3efa7edf5d70d6/mangin_library-0.0.1.tar.gz#sha256=8cd7fe49ad4be3590a2fa8e27e95e086ec141e2ad2d7385b1e9bb9caa241df10
 Best match: mangin-library 0.0.1
 Processing mangin_library-0.0.1.tar.gz
-Writing /tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.cfg
-Running mangin_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-_ifwukx0/mangin_library-0.0.1/egg-dist-tmp-onbdfwiy
+Writing /tmp/easy_install-pv_w8p42/mangin_library-0.0.1/setup.cfg
+Running mangin_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-pv_w8p42/mangin_library-0.0.1/egg-dist-tmp-9mdg2y64
 [91mTraceback (most recent call last):
   File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 154, in save_modules
     yield saved
@@ -55,7 +64,7 @@ Running mangin_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-
     _execfile(setup_script, ns)
   File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 45, in _execfile
     exec(code, globals, locals)
-  File "/tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.py", line 21, in <module>
+  File "/tmp/easy_install-pv_w8p42/mangin_library-0.0.1/setup.py", line 21, in <module>
   File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 144, in setup
     _install_setup_requires(attrs)
   File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 139, in _install_setup_requires
@@ -131,7 +140,7 @@ Traceback (most recent call last):
     _execfile(setup_script, ns)
   File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 45, in _execfile
     exec(code, globals, locals)
-  File "/tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.py", line 21, in <module>
+  File "/tmp/easy_install-pv_w8p42/mangin_library-0.0.1/setup.py", line 21, in <module>
   File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 144, in setup
     _install_setup_requires(attrs)
   File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 139, in _install_setup_requires
