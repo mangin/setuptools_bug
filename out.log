@@ -1,0 +1,150 @@
+Sending build context to Docker daemon  283.1kB
+Step 1/9 : FROM python:3.7-alpine3.9
+ ---> b559f4e7461d
+Step 2/9 : RUN python3.7 -m pip install pip --upgrade
+ ---> Using cache
+ ---> ebd1af100a9f
+Step 3/9 : RUN python3.7 -m pip install setuptools==41.4.0
+ ---> Using cache
+ ---> 71af2c876fe8
+Step 4/9 : ARG CACHEBUST=1
+ ---> Using cache
+ ---> f489eb13b728
+Step 5/9 : RUN echo -e "import setuptools\nprint('SETUP TOOLS VERSION: setuptools.version.__version__')" | python
+ ---> Using cache
+ ---> 6739f36acaa3
+Step 6/9 : RUN python3.7 --version
+ ---> Using cache
+ ---> 476973346bba
+Step 7/9 : WORKDIR /project
+ ---> Using cache
+ ---> f90caa625b53
+Step 8/9 : COPY project /project
+ ---> Using cache
+ ---> e06fcf621a20
+Step 9/9 : RUN python3.7 setup.py test
+ ---> Running in 1b0422ae7c49
+running test
+Searching for mangin-library-of-library
+Reading https://test.pypi.org/simple/mangin-library-of-library/
+Reading https://test.pypi.org/simple/mangin-library/
+Downloading https://test-files.pythonhosted.org/packages/ea/44/48dbf799fecb226308ffa7044a58a27f8629334b4e88f8b2f2172968d606/mangin_library_of_library-0.0.1.tar.gz#sha256=2f5272ad5568867da9bf4ac4b3c127e6aebbaab0428b4a9e0b117e18b70ffb01
+Best match: mangin-library-of-library 0.0.1
+Processing mangin_library_of_library-0.0.1.tar.gz
+Writing /tmp/easy_install-efvjfkyz/mangin_library_of_library-0.0.1/setup.cfg
+Running mangin_library_of_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-efvjfkyz/mangin_library_of_library-0.0.1/egg-dist-tmp-0l9tc3ky
+[91mNot found: ['https://test.pypi.org/simple/mangin-library-of-library/',
+Not found: 'https://test.pypi.org/simple/mangin-library/']
+[0mMoving mangin_library_of_library-0.0.1-py3.7.egg to /project/.eggs
+
+Installed /project/.eggs/mangin_library_of_library-0.0.1-py3.7.egg
+Searching for mangin-library
+Reading https://test.pypi.org/simple/mangin-library-of-library/
+Reading https://test.pypi.org/simple/mangin-library/
+Downloading https://test-files.pythonhosted.org/packages/97/08/fe8f4cd6a1177ac69eb6afdf99cd1d3278095905d7c03e3efa7edf5d70d6/mangin_library-0.0.1.tar.gz#sha256=8cd7fe49ad4be3590a2fa8e27e95e086ec141e2ad2d7385b1e9bb9caa241df10
+Best match: mangin-library 0.0.1
+Processing mangin_library-0.0.1.tar.gz
+Writing /tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.cfg
+Running mangin_library-0.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-_ifwukx0/mangin_library-0.0.1/egg-dist-tmp-onbdfwiy
+[91mTraceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 154, in save_modules
+    yield saved
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 195, in setup_context
+    yield
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 250, in run_setup
+    _execfile(setup_script, ns)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 45, in _execfile
+    exec(code, globals, locals)
+  File "/tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.py", line 21, in <module>
+  File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 144, in setup
+    _install_setup_requires(attrs)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 139, in _install_setup_requires
+    dist.fetch_build_eggs(dist.setup_requires)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 720, in fetch_build_eggs
+    replace_conflicting=True,
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 782, in resolve
+    replace_conflicting=replace_conflicting
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1065, in best_match
+    return self.obtain(req, installer)
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1077, in obtain
+    return installer(requirement)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 777, in fetch_build_egg
+    links = opts['find_links'][1] + links
+TypeError: can only concatenate str (not "list") to str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "setup.py", line 18, in <module>
+    'https://test.pypi.org/simple/mangin-library/',
+  File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 145, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/local/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/usr/local/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/usr/local/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/test.py", line 217, in run
+    installed_dists = self.install_dists(self.distribution)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/test.py", line 208, in install_dists
+    ir_d = dist.fetch_build_eggs(dist.install_requires)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 720, in fetch_build_eggs
+    replace_conflicting=True,
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 782, in resolve
+    replace_conflicting=replace_conflicting
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1065, in best_match
+    return self.obtain(req, installer)
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1077, in obtain
+    return installer(requirement)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 787, in fetch_build_egg
+    return cmd.easy_install(req)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/easy_install.py", line 679, in easy_install
+    return self.install_item(spec, dist.location, tmpdir, deps)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/easy_install.py", line 705, in install_item
+    dists = self.install_eggs(spec, download, tmpdir)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/easy_install.py", line 890, in install_eggs
+    return self.build_and_install(setup_script, setup_base)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/easy_install.py", line 1158, in build_and_install
+    self.run_setup(setup_script, setup_base, args)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/command/easy_install.py", line 1144, in run_setup
+    run_setup(setup_script, args)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 253, in run_setup
+    raise
+  File "/usr/local/lib/python3.7/contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 195, in setup_context
+    yield
+  File "/usr/local/lib/python3.7/contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 166, in save_modules
+    saved_exc.resume()
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 141, in resume
+    six.reraise(type, exc, self._tb)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/_vendor/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 154, in save_modules
+    yield saved
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 195, in setup_context
+    yield
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 250, in run_setup
+    _execfile(setup_script, ns)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/sandbox.py", line 45, in _execfile
+    exec(code, globals, locals)
+  File "/tmp/easy_install-_ifwukx0/mangin_library-0.0.1/setup.py", line 21, in <module>
+  File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 144, in setup
+    _install_setup_requires(attrs)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/__init__.py", line 139, in _install_setup_requires
+    dist.fetch_build_eggs(dist.setup_requires)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 720, in fetch_build_eggs
+    replace_conflicting=True,
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 782, in resolve
+    replace_conflicting=replace_conflicting
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1065, in best_match
+    return self.obtain(req, installer)
+  File "/usr/local/lib/python3.7/site-packages/pkg_resources/__init__.py", line 1077, in obtain
+    return installer(requirement)
+  File "/usr/local/lib/python3.7/site-packages/setuptools/dist.py", line 777, in fetch_build_egg
+    links = opts['find_links'][1] + links
+TypeError: can only concatenate str (not "list") to str
+[0m
